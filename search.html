@@ -12,11 +12,11 @@ GET https://www.googleapis.com/fusiontables/v1/tables/1e7y6mtqv892222222222_bbbb
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="slideshow.css">
 
-        
+
 <!-- 		FOR SLIDESHOW -->
 	<!-- bjqs.css contains the *essential* css needed for the slider to work -->
 	<link rel="stylesheet" href="bjqs.css">
-	<!-- demo.css contains additional styles used to set up this demo page - not required for the slider --> 
+	<!-- demo.css contains additional styles used to set up this demo page - not required for the slider -->
 	<link rel="stylesheet" href="demo.css">
 	<!-- load jQuery and the plugin -->
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -24,14 +24,14 @@ GET https://www.googleapis.com/fusiontables/v1/tables/1e7y6mtqv892222222222_bbbb
 <!-- 	    END SLIDESHOW -->
 
     -->
-    
-    
+
+
 </head>
-<body>	
+<body>
 	<header>
-		
+
 		<div class="inner">
-			
+
 			<nav>
 				<ul>
 					<li><a href="index.html">Home</a></li>
@@ -45,35 +45,35 @@ GET https://www.googleapis.com/fusiontables/v1/tables/1e7y6mtqv892222222222_bbbb
        name="name_last"
        id="name_last"
        placeholder=""
-       results=5 
+       results=5
        autosave=some_unique_value
        autofocus
        >
 
 								<input type="submit" id="search-button" value="Search" />
-								
-								
-								
+
+
+
 							</div>
 						</form>
 					</li>
 				</ul>
 			</nav>
 		</div>
-		
-		
+
+
 		</header>
 	<main>
 	<div align = "center" >
-	
+
 	<br><h2>Hayes Funeral Home Ledgers</h2><br>
 	<h2>(1902-1950) </h2>
 	<h3>Search by:</h3><br>
-	
+
 <form action="search.php" method="get">
-    
+
     <div class="section goup">
-	<div class = "col results_1_of_2">    
+	<div class = "col results_1_of_2">
 	    <label for="name_first">First Name: </label>
 	    <input type="search"
 	       name="name_first"
@@ -92,7 +92,7 @@ GET https://www.googleapis.com/fusiontables/v1/tables/1e7y6mtqv892222222222_bbbb
 	       />
 
 <br><br>
-	</div>    
+	</div>
 	<div class = "col results_1_of_2">
 	    <label for="cause_of_death">Cause of Death: </label>
 	    <input type="search"
@@ -100,7 +100,7 @@ GET https://www.googleapis.com/fusiontables/v1/tables/1e7y6mtqv892222222222_bbbb
 	       id="cause_of_death"
 	       placeholder=""
 	       autofocus
-	       />    
+	       />
 
 <br><br>
 		   <label for="year">Year of Death: </label>
@@ -120,14 +120,25 @@ GET https://www.googleapis.com/fusiontables/v1/tables/1e7y6mtqv892222222222_bbbb
 	       placeholder=""
 	       autofocus
 	       />
+
+<br><br>
+
+				<label for="occupation">Occupation: </label>
+			<input type="search"
+				name="occupation"
+				id="occupation"
+				placeholder=""
+				autofocus
+				/>
+				
 	</div>
-    </div> 
-    
-    
+    </div>
+
+
     <br><br><button class="hey" type="submit">Search</button>
-    
-    
-    
+
+
+
 </form>
 
 
@@ -137,12 +148,3 @@ GET https://www.googleapis.com/fusiontables/v1/tables/1e7y6mtqv892222222222_bbbb
 	</main>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
