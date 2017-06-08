@@ -55,7 +55,7 @@
 			$year=$_GET['year'];
 			$occupation=$_GET['occupation'];
 			$p=$_Get['prim'];
-			$con = mysql_connect("C:\Users\Alex\Desktop\DPS_alex_saad","ernest","xroads66");
+			$con = mysql_connect("localhost","ernest","xroads66");
 
 			if (!$con)
 			  {
