@@ -67,7 +67,13 @@
 			mysql_select_db("hayesLedgers", $con);
 
 
-		$result = mysql_query("SELECT * FROM l1 WHERE name_last LIKE '$name_last%' AND cause_of_death LIKE '%$cause_of_death%' AND name_first LIKE '$name_first%' AND ( year(date_on_ledger) LIKE '%$year%' AND year(date_on_ledger) BETWEEN '%$startyear%' AND '%$endyear%' ) AND interment_at LIKE '%$interment_at%' AND occupation LIKE '%$occupation%' ORDER BY age_years ASC ");
+		$result = mysql_query("SELECT * FROM l1 WHERE name_last LIKE '$name_last%' AND cause_of_death LIKE '%$cause_of_death%' AND name_first LIKE '$name_first%' AND interment_at LIKE '%$interment_at%' AND occupation LIKE '%$occupation%' ORDER BY age_years ASC ");
+                           if ($startyear != "" and $endyear != "") {
+                           void echo ("it works");
+                           $result .=  " AND year(date_on_ledger) BETWEEN '%$startyear%' AND '%$endyear%' ";
+} else {
+                           $result .= " AND year(date_on_ledger) LIKE '%$year%'";
+}
 			//name_first, name_last, age_years, cause_of_death, interment_at, date_on_ledger, funeral_services_at, 'PRIMARY'
 			echo
 						"<div id=\"wrapper\">
