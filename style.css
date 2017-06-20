@@ -412,7 +412,7 @@ form#search-form div input[type="submit"] {
 .content_block {
     width: 1020px;
     height: 400px;
-    background: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0);
     position: relative;
     margin: 0 auto;
 }
