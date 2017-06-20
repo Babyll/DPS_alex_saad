@@ -736,6 +736,7 @@ h1 {
 
 #keywords tbody tr { 
   color: #555;
+  background-color: #fff;
 }
 #keywords tbody tr td {
   text-align: center;
