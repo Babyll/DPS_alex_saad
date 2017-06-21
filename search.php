@@ -48,14 +48,16 @@
 		<br>
 
 			<?php
+			$name_first=$_GET['name_first'];
+			$name_middle=$_GET['name_middle'];
 			$name_last=$_GET['name_last'];
 			$interment_at=$_GET['interment_at'];
 			$cause_of_death=$_GET['cause_of_death'];
-			$name_first=$_GET['name_first'];
 			$year=$_GET['year'];
 			$occupation=$_GET['occupation'];
                         $startyear=$_GET['startyear'];
                         $endyear=$_GET['endyear'];
+			$place_of_death=$_GET['place_of_death'];
 			$p=$_Get['prim'];
 			$con = mysql_connect("localhost","ernest","xroads66");
 
@@ -67,7 +69,7 @@
 			mysql_select_db("hayesLedgers", $con);
 
 
-		$result = mysql_query("SELECT * FROM l1 WHERE name_last LIKE '$name_last%' AND cause_of_death LIKE '%$cause_of_death%' AND name_first LIKE '$name_first%' AND interment_at LIKE '%$interment_at%' AND occupation LIKE '%$occupation%' AND ( (year(date_on_ledger) BETWEEN '$startyear' AND '$endyear') OR year(date_on_ledger) = '$year') ORDER BY age_years ASC ");
+		$result = mysql_query("SELECT * FROM l1 WHERE name_last LIKE '$name_last%' AND cause_of_death LIKE '%$cause_of_death%' AND name_first LIKE '$name_first%' AND name_middle LIKE '%$name_middle%' AND interment_at LIKE '%$interment_at%' AND place_of_death LIKE '%$place_of_death%' AND occupation LIKE '%$occupation%' AND ( (year(date_on_ledger) BETWEEN '$startyear' AND '$endyear') OR year(date_on_ledger) = '$year') ORDER BY age_years ASC ");
                            			//name_first, name_last, age_years, cause_of_death, interment_at, date_on_ledger, funeral_services_at, 'PRIMARY'
 			echo
 						"<div id=\"wrapper\">
@@ -77,12 +79,14 @@
 		    <thead>
 		      <tr>
 			<th><span>First Name</span></th>
+			<th><span>Middle Name</span></th>
 			<th><span>Last Name</span></th>
 			<th class={tablersorter:'digit'}><span>Age </span></th>
 			<th><span>Date of Death</span></th>
 			<th><span>Cause of Death</span></th>
 			<th><span>Cemetery</span></th>
 			<th><span>Occupation</span></th>
+			<th><span>Death Location</span><th>
 		      </tr>
 		    </thead>";
 			while($row = mysql_fetch_array($result)) {
@@ -91,34 +95,24 @@
 		    "
 		      <tr>
 			<td >". "<a href=view.php?id=".$row['prim'].">".$row['name_first']."</td>
+			<td>".$row['name_middle']."</td>
 			<td>".$row['name_last']."</td>
 			<td>".$row['age_years']."</td>
 			<td>".$row['date_on_ledger']."</td>
 			<td>".$row['cause_of_death']."</td>
 			<td>".$row['interment_at']."</td>
 			<td>".$row['occupation']."</td>
+			<td>".$row['place_of_death']."</td>
 		      </tr>";
-
-
-
-
 
 			  }
 
-
-
-
-
-
-
-
-  echo "</table>";
- echo "</div> ";
+echo "</table>";
+echo "</div> ";
 
 		echo json_encode($result);
 			mysql_close($con);
 			?>
-
 
 	</body>
 	</html>
