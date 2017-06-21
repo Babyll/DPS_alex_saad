@@ -57,7 +57,7 @@
                         $startyear=$_GET['startyear'];
                         $endyear=$_GET['endyear'];
 			$p=$_Get['prim'];
-			$con = mysql_connect("166.78.241.172","ernest","xroads66");
+			$con = mysql_connect("localhost","ernest","xroads66");
 
 			if (!$con)
 			  {
