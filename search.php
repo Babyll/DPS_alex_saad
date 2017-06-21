@@ -2,7 +2,7 @@
 	<html>
 		<meta charset="UTF-8">
 	<head>
-		<link rel="stylesheet" href="style.css" media="screen" type="text/css" >
+		<link rel="stylesheet" href="results_style.css" media="screen" type="text/css" >
 		<link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	    <link href='http://fonts.googleapis.com/css?family=Lato:400,300italic,700italic' rel='stylesheet' type='text/css'>
 	<script src='js/jquery-1.3.1.min.js'></script>
@@ -57,7 +57,7 @@
                         $startyear=$_GET['startyear'];
                         $endyear=$_GET['endyear'];
 			$p=$_Get['prim'];
-			$con = mysql_connect("localhost","ernest","xroads66");
+			$con = mysql_connect("166.78.241.172","ernest","xroads66");
 
 			if (!$con)
 			  {
