@@ -24,30 +24,13 @@ table {
 }
 
 
-/* 2.1 BODY DEFAULTS
---------------------------------------------------------- */
- html {
-    margin-bottom: 1px;
-    /* 	min-height: 100%; */
-}
-body {
-	background: #0F4865;  		/*nice blue*/
-	/*background: #103252;*/
-    /*background: #F0F0F0;    ORIGINAL gry*/
-    color: #444;
-    font-family: Georgia, serif;
-    font-size: 62.5%;
-}
-body {
-	font-size: 16px;
-}
 
 
 
 /******************ledgers results***********************/
 
 .result {
-   width: 1020px;
+   width: 2020px;
    height: 77px;
    background: #FFF;
    position: relative;
