@@ -53,11 +53,17 @@
 			$name_last=$_GET['name_last'];
 			$interment_at=$_GET['interment_at'];
 			$cause_of_death=$_GET['cause_of_death'];
-			$year=$_GET['year'];
+			$age_years=$_GET['age_years'];
 			$occupation=$_GET['occupation'];
-                        $startyear=$_GET['startyear'];
-                        $endyear=$_GET['endyear'];
+            $startyear=$_GET['startyear'];
+            $endyear=$_GET['endyear'];
+			$marriage_status=$_GET['marriage_status'];
 			$place_of_death=$_GET['place_of_death'];
+			$charge_to=$_GET['charge_to'];
+			$how_secured=$_GET['how_secured'];
+			$certifying_physician=$_GET['certifying_physician'];
+			$date_of_death=$_GET['date_of_death'];
+			$date_of_funeral=$_GET['date_of_funeral'];
 			$p=$_Get['prim'];
 			$con = mysql_connect("localhost","ernest","xroads66");
 
@@ -69,7 +75,10 @@
 			mysql_select_db("hayesLedgers", $con);
 
 
-		$result = mysql_query("SELECT * FROM l1 WHERE name_last LIKE '$name_last%' AND cause_of_death LIKE '%$cause_of_death%' AND name_first LIKE '$name_first%' AND name_middle LIKE '%$name_middle%' AND interment_at LIKE '%$interment_at%' AND place_of_death LIKE '%$place_of_death%' AND occupation LIKE '%$occupation%' AND ( (year(date_on_ledger) BETWEEN '$startyear' AND '$endyear') OR year(date_on_ledger) = '$year') ORDER BY age_years ASC ");
+		$result = mysql_query("SELECT * FROM l1 WHERE name_last LIKE '$name_last%' AND age_years LIKE '%$age_years%' AND cause_of_death LIKE '%$cause_of_death%'
+			AND name_first LIKE '$name_first%' AND name_middle LIKE '%$name_middle%' AND interment_at LIKE '%$interment_at%' AND place_of_death LIKE '%$place_of_death%'
+			AND charge_to LIKE '%$charge_to%' AND how_secured LIKE '%$how_secured%' AND certifying_physician LIKE '%$certifying_physician%' AND marriage_status LIKE '%$marriage_status%'
+			AND occupation LIKE '%$occupation%' AND ( (year(date_on_ledger) BETWEEN '$startyear' AND '$endyear') OR year(date_on_ledger) = '$year') ORDER BY age_years ASC ");
                            			//name_first, name_last, age_years, cause_of_death, interment_at, date_on_ledger, funeral_services_at, 'PRIMARY'
 			echo
 						"<div id=\"wrapper\">
@@ -86,7 +95,13 @@
 			<th><span>Cause of Death</span></th>
 			<th><span>Cemetery</span></th>
 			<th><span>Occupation</span></th>
-			<th><span>Death Location</span><th>
+			<th><span>Marriage Status</span></th>
+			<th><span>Charge to</span></th>
+			<th><span>How Secured</span><th>
+			<th><span>Certifying Physician</span><th>
+			<th><span>Place of Death</span><th>
+			<th><span>Date of Death</span><th>
+			<th><span>Date of Funeral</span><th>
 		      </tr>
 		    </thead>";
 			while($row = mysql_fetch_array($result)) {
@@ -97,12 +112,18 @@
 			<td >". "<a href=view.php?id=".$row['prim'].">".$row['name_first']."</td>
 			<td>".$row['name_middle']."</td>
 			<td>".$row['name_last']."</td>
+			<td>".$row['interment_at']."</td>
+			<td>".$row['cause_of_death']."</td>
 			<td>".$row['age_years']."</td>
 			<td>".$row['date_on_ledger']."</td>
-			<td>".$row['cause_of_death']."</td>
-			<td>".$row['interment_at']."</td>
 			<td>".$row['occupation']."</td>
+			<td>".$row['marriage_status']."</td>
 			<td>".$row['place_of_death']."</td>
+			<td>".$row['charge_to']."</td>
+			<td>".$row['how_secured']."</td>
+			<td>".$row['certifying_physician']."</td>
+			<td>".$row['date_of_death']."</td>
+			<td>".$row['date_of_funeral']."</td>
 		      </tr>";
 
 			  }
