@@ -90,16 +90,18 @@
 			<th><span>First Name</span></th>
 			<th><span>Middle Name</span></th>
 			<th><span>Last Name</span></th>
-			<th class={tablersorter:'digit'}><span>Age </span></th>
-			<th><span>Date of Death</span></th>
-			<th><span>Cause of Death</span></th>
 			<th><span>Cemetery</span></th>
+			<th><span>Cause of Death</span></th>
+			<th class={tablersorter:'digit'}><span>Age </span></th>
 			<th><span>Occupation</span></th>
+			<th><span>Date of Death</span></th>
+			<th><span>startyear</span></th>
+			<th><span>endyear</span></th>
 			<th><span>Marriage Status</span></th>
+			<th><span>Death Location</span></th>
 			<th><span>Charge to</span></th>
 			<th><span>How Secured</span><th>
 			<th><span>Certifying Physician</span><th>
-			<th><span>Place of Death</span><th>
 			<th><span>Date of Death</span><th>
 			<th><span>Date of Funeral</span><th>
 		      </tr>
@@ -115,8 +117,10 @@
 			<td>".$row['interment_at']."</td>
 			<td>".$row['cause_of_death']."</td>
 			<td>".$row['age_years']."</td>
-			<td>".$row['date_on_ledger']."</td>
 			<td>".$row['occupation']."</td>
+			<td>".$row['date_on_ledger']."</td>
+			<td>".$row['startyear']."</td>
+			<td>".$row['endyear']."</td>
 			<td>".$row['marriage_status']."</td>
 			<td>".$row['place_of_death']."</td>
 			<td>".$row['charge_to']."</td>
